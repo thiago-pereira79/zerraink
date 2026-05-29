@@ -1,0 +1,6 @@
+{
+  "name": "ZERRAINK Studio",
+  "description": "Estúdio de tatuagem premium focado em arte exclusiva e autoral.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

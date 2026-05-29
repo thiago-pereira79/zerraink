@@ -1,0 +1,744 @@
+{
+  "common": {
+    "back": "Back",
+    "budget": "Budget",
+    "getBudget": "Budget",
+    "sendMessage": "Send Message",
+    "whatsapp": "WhatsApp",
+    "instagram": "Instagram",
+    "address": "Address",
+    "hours": "Hours",
+    "location": "Location",
+    "sendIdea": "Send my idea",
+    "viewGallery": "View Gallery",
+    "seeOnMaps": "VIEW ON GOOGLE MAPS",
+    "appointmentOnly": "By appointment only",
+    "appointmentOnlyDetailed": "Service only by appointment.",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfUse": "Terms of Use",
+    "faqs": "Common Questions",
+    "copyright": "© 2026 ZERRAINK. All rights reserved.",
+    "ziStudio": "Studio",
+    "contactCta": "SHALL WE BRING YOUR IDEA TO LIFE?",
+    "language": "Language",
+    "backToHome": "Back",
+    "backToStyles": "Back to styles",
+    "backToGallery": "Back to gallery",
+    "backToTop": "Back to top",
+    "legal": {
+      "tag": "LEGAL"
+    },
+    "social": {
+      "instagram": "Instagram",
+      "whatsapp": "WhatsApp"
+    }
+  },
+  "footer": {
+    "concept": "THE STUDIO",
+    "about": "Art on skin, technique\non the process and care\nin every detail.",
+    "navigation": "NAVIGATION",
+    "specialties": "SPECIALTIES",
+    "contact": "TALK TO THE STUDIO",
+    "disclaimer": "Consultation by appointment. Each project is developed individually, with listening, skin analysis and intention behind each stroke.",
+    "copyright": "© 2026 ZERRAINK. All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Use",
+    "faq": "FAQ",
+    "labels": {
+      "whatsapp": "WhatsApp",
+      "address": "Address",
+      "instagram": "Instagram"
+    },
+    "values": {
+      "city": "Vila Seixas, Ribeirão Preto/SP"
+    }
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "styles": "Styles",
+    "gallery": "Gallery",
+    "videos": "Videos",
+    "festivais": "Festivals",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "EXCLUSIVE ART",
+    "subtitle": "FOR YOUR SKIN.",
+    "description": "Tattoo studio in Ribeirão Preto, specialized in authorial projects created with technique, presence and meaning.",
+    "cards": {
+      "autoral": "AUTHORIAL",
+      "exclusive": "EXCLUSIVE",
+      "personalized": "PERSONALIZED",
+      "timeless": "TIMELESS"
+    }
+  },
+  "home": {
+    "styles": {
+      "tag": "AUTHORIAL STYLES",
+      "title": "Different strokes for different stories.",
+      "description": "A preview of the styles I develop at the studio. Each project is born from your idea, the skin reading and the intention behind the stroke.",
+      "viewAll": "EXPLORE ALL",
+      "viewStyles": "View styles"
+    },
+    "gallery": {
+      "tag": "VISUAL GALLERY",
+      "title": "The result appears on the skin. The story begins before.",
+      "titleFirstPart": "The result",
+      "titleSecondPart": "appears on the skin.",
+      "subtitle": "The story begins before.",
+      "description": "A visual curation of styles, strokes and atmospheres that translate the ZERRAINK aesthetic.",
+      "viewAll": "VIEW FULL GALLERY"
+    },
+    "videos": {
+      "tag": "VIDEOS",
+      "title": "Art in Motion.",
+      "description": "Records of the process, technique and atmosphere behind each session.",
+      "viewAll": "View all videos"
+    },
+    "artist": {
+      "tag": "BEHIND THE STROKE",
+      "title": "The studio in Art. Purpose. Precision.",
+      "name": "Lucas Zerra",
+      "description": "Tattoo artist in Ribeirão Preto, focusing on authorial projects, technical precision and exclusive service by appointment.",
+      "cta": "Meet the Artist",
+      "titleBrief": "Art, legacy and purpose.",
+      "experienceValue": "+8 years",
+      "experienceLabel": "of experience",
+      "reviewsValue": "100%",
+      "reviewsLabel": "positive reviews",
+      "features": {
+        "autoral": "Authorial art",
+        "autoralSub": "in every detail",
+        "precision": "Precision",
+        "precisionSub": "in the stroke",
+        "exclusive": "Exclusive",
+        "exclusiveSub": "service"
+      }
+    },
+    "testimonials": {
+      "tag": "TESTIMONIALS",
+      "title": "Those who have already lived the experience.",
+      "description": "Accounts of those who trusted their idea, their skin and their story to the studio.",
+      "items": {
+        "1": "Best tattoo artist ever! I loved my first tattoos so much. He's the only one I trust.",
+        "2": "I chose you to do my very first tattoo! Great vibe, patience, and quality!",
+        "3": "A tattoo artist of excellence. Seriously, with every art he makes, you want to get more.",
+        "4": "My favorite! I will get many more tattoos with you. Impeccable work! 🥰",
+        "5": "I'm already researching the next one! Great professional 👏",
+        "6": "The best! I will definitely get many more tattoos 😌",
+        "7": "My best tattoo is yours.",
+        "8": "Your work is amazing!",
+        "9": "Impeccable work ❤️🌸❤️🌸",
+        "10": "I love your tattoos!",
+        "11": "I've known Lucas and followed his work since practically the beginning, when he still worked as a body piercer.\n\nMy first tattoo was with him in 2019. Since then, we have done almost 30 tattoos, all made by him. In a way, I followed his evolution closely, his growth as an artist, and the dedication he puts into every work.\n\nI'm proud to say that, in some way, I'm part of this journey. And as I always say to him, Lucas is one of the best tattoo artists in Ribeirão Preto and the region."
+      }
+    },
+    "testimonialsPage": {
+      "seo": {
+        "title": "Testimonials | ZERRAINK Estúdio",
+        "description": "Real feedbacks from people who have lived the process with hospitality, technique and safety at ZERRAINK Estúdio."
+      },
+      "tag": "TESTIMONIALS",
+      "title": "Real stories, trust in every stroke",
+      "desc": "Every tattoo carries a story. Check out the experience of those who have already trusted my work to transform meanings into art.",
+      "cards": {
+        "feedbacks": {
+          "title": "Real feedbacks",
+          "desc": "True stories of those who have already lived this experience."
+        },
+        "process": {
+          "title": "Clear process",
+          "desc": "Guidance from the idea to post-session care."
+        },
+        "safety": {
+          "title": "Safe experience",
+          "desc": "Hygiene, technique and hospitality in every step."
+        }
+      },
+      "trust": {
+        "title": "THE TRUST OF THOSE WHO HAVE TATTOOED",
+        "subtitle": "Much more than technique. Care, respect and dedication from start to finish.",
+        "check1": {
+          "title": "Sensitive listening",
+          "desc": "Each idea is treated with attention and respect for your story."
+        },
+        "check2": {
+          "title": "Impeccable hygiene",
+          "desc": "Prepared, safe and professional environment."
+        },
+        "check3": {
+          "title": "Refined technique",
+          "desc": "Precision of the stroke and care in every detail."
+        },
+        "check4": {
+          "title": "A welcoming experience",
+          "desc": "From the first contact to healing, all with clarity."
+        }
+      },
+      "more": "MORE TESTIMONIALS"
+    },
+    "finalCta": {
+      "title": "Have an idea stored for a long time?",
+      "description": "Tell me what you imagine. The first stroke begins in the conversation.",
+      "whatsapp": "Talk on WhatsApp",
+      "send": "Send my idea"
+    },
+    "trust": {
+      "tag": "PATH TO YOUR TATTOO",
+      "title": "The experience journey",
+      "card1": {
+        "title": "INITIAL LISTENING",
+        "desc": "The idea begins with a conversation about references, style, skin, meaning, and expectation."
+      },
+      "card2": {
+        "title": "PROJECT CREATION",
+        "desc": "The design is meant to respect your body, your story, and the aesthetics that suit you."
+      },
+      "card3": {
+        "title": "SESSION WITH CARE",
+        "desc": "The service takes place with preparation, safety, technique, and an environment designed to welcome."
+      },
+      "card4": {
+        "title": "RESULT WITH PRESENCE",
+        "desc": "A tattoo made to last visually, emotionally, and artistically."
+      }
+    },
+    "finalCtaBox": {
+      "tag": "LET'S TALK?",
+      "title": "Shall we eternalize something that makes sense to you?",
+      "desc": "If you want to take an idea off paper, understand the process better or schedule your next tattoo, this is the best starting point.",
+      "whatsappCard": "CALL ON WHATSAPP",
+      "emailCard": "SEND EMAIL",
+      "socialCard": "CHECK SOCIAL MEDIA"
+    }
+  },
+  "about": {
+    "artist": {
+      "tag": "THE ARTIST",
+      "name": "Lucas Zerra",
+      "p1": "My name is Lucas Zerra and I have been a tattoo artist since 2018. My history with tattooing began within my own family, coming from a generation of tattoo artists. It was through my older brother, my first master, that I discovered this universe and developed my passion for art.",
+      "p2": "Since then, I have been building my trajectory with dedication, exploring different styles and constantly evolving as an artist. I like to work on projects starting from minimalist, fine ones to colorful, complex compositions, always seeking to create tattoos with personality, meaning, and originality.",
+      "p3": "Today, living in Ribeirão Preto, I carry a background marked by experiences, evolution, and recognition. Along my journey, I have won awards at 5 tattoo conventions, which represents not only results, but also all the dedication put into every detail of my work.",
+      "p4": "Tattooing completely changed my life. More than a profession, it has become part of who I am. It is through art that I am able to express myself, connect stories, and transform ideas into something unique and permanent."
+    },
+    "stats": {
+      "years": "9+",
+      "yearsLabel": "Years of Practice",
+      "autoral": "100%",
+      "autoralLabel": "Authorial"
+    },
+    "manifesto": {
+      "tag": "MY MANIFESTO",
+      "title": "Silence, Precision, Art.",
+      "text": "\"ZERRAINK is not an image factory. It is a studio of intentions. I believe that tattooing is the trace of a journey and, therefore, I dedicate time and soul to every inch of skin.\""
+    },
+    "differentials": {
+      "private": {
+        "title": "Private Service",
+        "desc": "Appointments only, ensuring total focus on the client."
+      },
+      "safety": {
+        "title": "Strict Safety",
+        "desc": "Biosafety protocols that exceed required standards."
+      },
+      "consultancy": {
+        "title": "Pre-Session Consultancy",
+        "desc": "Detailed conversation to align concept, size and fit."
+      }
+    },
+    "trajectory": {
+      "tag": "TRAJECTORY",
+      "title": "A journey built with art and purpose.",
+      "step1": {
+        "title": "Family origin",
+        "desc": "Tattooing has always been part of my story. Coming from a generation of tattoo artists, I found in my older brother, my first master, the gateway to this universe."
+      },
+      "step2": {
+        "title": "Constant evolution",
+        "desc": "Since 2018, I have been dedicating myself every day to evolve as an artist, exploring techniques, references and new possibilities to deliver my best in every project."
+      },
+      "step3": {
+        "title": "Style versatility",
+        "desc": "I work with a wide variety of styles, from minimalist and fine line to colorful and complex, always seeking the best artistic solution for each idea."
+      },
+      "step4": {
+        "title": "Recognition",
+        "desc": "Awarded in 5 tattoo conventions, a result of much study, practice, and respect for every detail of the creative and technical process."
+      }
+    },
+    "values": {
+      "tag": "HOW I WORK",
+      "title": "Values that guide every creation.",
+      "val1": {
+        "title": "Safety",
+        "desc": "Sanitized environment, rigorous protocols and high quality disposable materials."
+      },
+      "val2": {
+        "title": "Customization",
+        "desc": "Each project is developed with total attention to the story, idea and personality of those who trust in my work."
+      },
+      "val3": {
+        "title": "Dialogue",
+        "desc": "Active listening and clear communication in all stages to transform ideas into real results."
+      },
+      "val4": {
+        "title": "Excellence",
+        "desc": "Commitment to technique, composition and finishes that make a difference in the long term."
+      }
+    }
+  },
+  "styles": {
+    "intro": {
+      "tag": "Signature styles",
+      "title": "Different lines for different stories.",
+      "uniqueTitle": "A creation designed for you.",
+      "uniqueDesc": "Each project starts from your idea, the reading of the skin and the intention behind the line.",
+      "uniqueCta": "Send my idea"
+    },
+    "process": {
+      "tag": "Process",
+      "title": "From the first contact to the final line.",
+      "steps": {
+        "step1": {
+          "title": "Initial conversation",
+          "desc": "You send your idea, references and direct intention."
+        },
+        "step2": {
+          "title": "Project study",
+          "desc": "The design is thought to talk to your skin, body and style."
+        },
+        "step3": {
+          "title": "Approval",
+          "desc": "The proposal is aligned and adjusted before we mark the session."
+        },
+        "step4": {
+          "title": "Preparation",
+          "desc": "Materials, bench and environment follow rigorous professional care."
+        },
+        "step5": {
+          "title": "Execution",
+          "desc": "The stroke takes shape with precision, attention and artistic care."
+        },
+        "step6": {
+          "title": "Post-tattoo",
+          "desc": "You receive all the guidelines to guarantee perfect healing."
+        }
+      }
+    }
+  },
+  "contact": {
+    "tag": "CONTACT",
+    "title": "Transform your idea into a stroke.",
+    "intro": {
+      "tag": "TALK TO ME",
+      "title": "Your next art starts here.",
+      "description": "Every line tells a story. Tell me in detail how you imagine your project and I will develop a unique custom proposal."
+    },
+    "info": {
+      "whatsapp": {
+        "title": "WhatsApp",
+        "cta": "Send Message"
+      },
+      "address": {
+        "title": "Location"
+      },
+      "instagram": {
+        "title": "Instagram"
+      },
+      "ideaTitle": "Let's start your idea.",
+      "p1": "More than a tattoo, here your idea is heard with care, technique and respect for your story.",
+      "p2": "Tell me what you imagined and let's create art made for your skin.",
+      "checklistTag": "WHAT TO SEND IN THE FIRST CONTACT",
+      "check1": "Your idea in a few words",
+      "check2": "Visual references (photos or screenshots)",
+      "check3": "Desired body location",
+      "check4": "Approximate size (if you have an idea)",
+      "storyTitle": "EVERY TATTOO CARRIES A STORY",
+      "storyDesc": "It will be a pleasure to transform your story into art."
+    },
+    "cards": {
+      "whatsapp": {
+        "title": "Speak directly with the studio",
+        "desc": "Quick responses for questions, initial alignments and quotes."
+      },
+      "email": {
+        "tag": "EMAIL",
+        "title": "Detailed proposals and files",
+        "desc": "Send emails with ideas, references and files for more complete proposals."
+      },
+      "address": {
+        "title": "Rua Casemiro de Abreu, 256, Room 26",
+        "desc": "Vila Seixas, Ribeirão Preto/SP, with exclusive and individualized service."
+      },
+      "hours": {
+        "tag": "HOURS",
+        "title": "Appointment only service",
+        "desc": "Each project is developed with dedication, listening and analysis of every detail."
+      }
+    },
+    "map": {
+      "title": "ZERRAINK Studio Address",
+      "description": "The studio is located in the heart of Vila Seixas. An environment prepared to offer the maximum comfort and privacy during your session.",
+      "googleMaps": "VIEW ON GOOGLE MAPS",
+      "aria": "Map with ZERRAINK Studio location in Ribeirão Preto"
+    },
+    "form": {
+      "title": "Request a Budget",
+      "description": "Tell me your idea. I will respond with an exclusive technical and artistic proposal for your project.",
+      "success": "Message sent successfully! I'll be in touch soon.",
+      "labels": {
+        "name": "Your Name",
+        "whatsapp": "WhatsApp",
+        "style": "Desired style",
+        "bodyPart": "Body part",
+        "idea": "Your Idea"
+      },
+      "placeholders": {
+        "name": "What would you like to be called?",
+        "whatsapp": "(00) 00000-0000",
+        "bodyPart": "Ex: Forearm, Back...",
+        "idea": "Briefly describe what you want to tattoo and the meaning behind the project..."
+      },
+      "submit": "SEND MY IDEA",
+      "privacyNotice": "Your data is protected according to the Privacy Policy."
+    },
+    "studioLocation": {
+      "tag": "LOCATION",
+      "title": "Find the studio",
+      "description": "The studio is located in the heart of Vila Seixas. An environment prepared to provide maximum comfort and privacy during your session."
+    }
+  },
+  "techniques": {
+    "realism": {
+      "title": "Black and Grey Realism",
+      "desc": "Depth, contrast and real details in achromatic tones.",
+      "cta": "See realism in detail"
+    },
+    "fineline": {
+      "title": "Fine Line",
+      "desc": "Elegance, lightness and precision in ultra-fine strokes.",
+      "cta": "Explore fine strokes"
+    },
+    "colorido": {
+      "title": "Color",
+      "desc": "Vibrance and fidelity for characters and universes.",
+      "cta": "See colorful projects"
+    },
+    "coverup": {
+      "title": "Cover-up & Restoration",
+      "desc": "Transformation of old arts into new stories.",
+      "cta": "Understand transformation"
+    },
+    "ornamental": {
+      "title": "Ornamental",
+      "desc": "Symmetry, patterns and compositions that follow body anatomy.",
+      "cta": "See ornamental art"
+    },
+    "oldschool": {
+      "title": "Old School",
+      "desc": "Tradition, firm lines and solid colors in timeless arts.",
+      "cta": "Explore the classic"
+    }
+  },
+  "faq": {
+    "intro": {
+      "tag": "SUPPORT",
+      "title": "Common Questions",
+      "description": "Before tattooing, it's normal to want to understand every detail. Here are the answers to the most common questions."
+    },
+    "questions": {
+      "faq1": {
+        "q": "How does the budget work?",
+        "a": "The budget is made based on the size, complexity and style of the art. You send me your idea and references, and I return with a personalized proposal."
+      },
+      "faq2": {
+        "q": "Can I send references?",
+        "a": "Yes, references are essential to understand your visual intention, but remember: each ZERRAINK project is authorial."
+      },
+      "faq3": {
+        "q": "Is the design exclusive?",
+        "a": "Absolutely. Each art is created from scratch to respect your anatomy and your history."
+      },
+      "faq4": {
+        "q": "How does a cover-up work?",
+        "a": "I analyze the old tattoo to understand how the new project can camouflage and transform the art in a harmonious way."
+      },
+      "faq5": {
+        "q": "Does it hurt a lot?",
+        "a": "Pain is subjective and varies according to the part of the body. I guarantee a calm environment and techniques that minimize discomfort."
+      },
+      "faq6": {
+        "q": "What care do I need to have afterwards?",
+        "a": "You will receive a complete post-session care guide, including cleaning and recommended ointments for perfect healing."
+      },
+      "faq7": {
+        "q": "Can I pay in installments?",
+        "a": "Yes, the studio offers credit card installment options to facilitate your investment in art."
+      },
+      "faq8": {
+        "q": "How do I schedule?",
+        "a": "The appointment is made after the approval of the budget, upon payment of a date reservation deposit."
+      }
+    },
+    "footer": {
+      "title": "Still have questions?",
+      "description": "If your question isn't here, feel free to call me directly. I'm at your disposal.",
+      "whatsapp": "CALL ON WHATSAPP",
+      "back": "BACK TO HOME"
+    }
+  },
+  "gallery": {
+    "categories": {
+      "todos": "All",
+      "realismo": "Realism",
+      "fineline": "Fine Line",
+      "blackwork": "Blackwork",
+      "colorido": "Color",
+      "autoral": "Authorial"
+    },
+    "items": {
+      "item1": {
+        "title": "Neo Tradition"
+      },
+      "item2": {
+        "title": "Geometric Flow"
+      },
+      "item3": {
+        "title": "Delicate Petals"
+      },
+      "item4": {
+        "title": "Dark Soul"
+      },
+      "item5": {
+        "title": "Minimalist Wave"
+      },
+      "item6": {
+        "title": "Colorful Spirit"
+      },
+      "item7": {
+        "title": "Authorial 1"
+      },
+      "item8": {
+        "title": "Authorial 2"
+      },
+      "item9": {
+        "title": "Authorial 3"
+      },
+      "item10": {
+        "title": "Authorial 4"
+      },
+      "item11": {
+        "title": "Authorial 5"
+      },
+      "item12": {
+        "title": "Authorial 6"
+      }
+    }
+  },
+  "festivals": {
+    "intro": {
+      "title": "Records of presence, exchange and recognition in the art of storytelling.",
+      "description": "Each festival represents exchange, evolution and presence within the art of tattooing. Here, some records of events, backstage and moments that are part of the ZERRAINK trajectory."
+    },
+    "eventAltPrefix": "Artist's participation in the event",
+    "badge": "Trajectory Record"
+  },
+  "videos": {
+    "video1": {
+      "title": "Behind the stroke",
+      "desc": "Watch the actual creation process."
+    },
+    "video2": {
+      "title": "ZERRAINK in action",
+      "desc": "Dedication, technique and precision in each session."
+    }
+  },
+  "testimonials": {
+    "item1": {
+      "text": "Sensational professional! Impeccable work and incredible atmosphere. Exceeded all expectations."
+    },
+    "item2": {
+      "text": "Excellent service from start to finish. The tattoo turned out exactly as I dreamed."
+    },
+    "item3": {
+      "text": "The best studio I've ever known. Hygiene, professionalism and art of the highest level."
+    }
+  },
+  "seo": {
+    "home": {
+      "title": "ZERRAINK Studio | Authorial Tattoo in Ribeirão Preto",
+      "description": "Tattoo studio in Ribeirão Preto specialized in authorial projects, fine line, realism, cover-up and custom tattoos."
+    },
+    "about": {
+      "title": "About ZERRAINK Studio | Tattoo Artist in Ribeirão Preto",
+      "description": "Meet ZERRAINK Studio, a tattoo studio in Ribeirão Preto with a focus on authorial art, stroke precision and exclusive service."
+    },
+    "styles": {
+      "title": "Tattoo Styles | ZERRAINK Studio",
+      "description": "Explore tattoo styles like fine line, black and grey realism, color, cover-up and authorial projects at ZERRAINK Studio."
+    },
+    "gallery": {
+      "title": "Tattoo Gallery | ZERRAINK Studio",
+      "description": "See recent authorial tattoo work, realism, fine line, cover-up and custom projects created at ZERRAINK Studio."
+    },
+    "contact": {
+      "title": "Request a Tattoo Budget | ZERRAINK Studio",
+      "description": "Send your idea and request a budget for an authorial tattoo in Ribeirão Preto. Exclusive service by appointment."
+    },
+    "behind": {
+      "title": "Backstage and Videos | ZERRAINK Studio",
+      "description": "Explore the creative process, the backstage and watch videos of the sessions at ZERRAINK Studio in Ribeirão Preto."
+    },
+    "festivals": {
+      "title": "Festivals and Recognition | ZERRAINK Studio",
+      "description": "Check out my trajectory in tattoo conventions and festivals throughout Brazil."
+    },
+    "privacy": {
+      "title": "Privacy Policy | ZERRAINK Studio",
+      "description": "How the studio collects, uses, and protects your data on the website and during service."
+    },
+    "terms": {
+      "title": "Terms of Use | ZERRAINK Studio",
+      "description": "Website terms of use and guidance on booking, service, and biosafety at ZERRAINK Studio."
+    }
+  },
+  "legal": {
+    "privacy": {
+      "title": "Privacy Policy",
+      "p1": "Your privacy is important to ZERRAINK. It is my policy and the studio's to respect your privacy regarding any information of yours that may be collected on the ZERRAINK website.",
+      "h1": "Information Collection",
+      "p2": "I request personal information only when it is actually necessary to provide you with a service. I do so by fair and legal means, with your knowledge and consent.",
+      "h2": "Data Use",
+      "p3": "I do not share personally identifiable information publicly or with third parties, except when required by law. This site may contain links to external sites that are not operated by me.",
+      "scopeTitle": "This policy covers",
+      "scopeLgpd": "LGPD",
+      "scopeCookies": "Cookies",
+      "scopeData": "Data",
+      "cookiesControl": "You control your browser",
+      "cookiesDesc": "By accepting cookies, you help the studio improve the reading journey and load portfolios more efficiently.",
+      "cookiesDecline": "Decline",
+      "cookiesAccept": "Accept cookies",
+      "consentUpdated": "Preferences updated!",
+      "cookiesSaved": "Navigation cookies were saved successfully.",
+      "cookiesRejected": "Cookies were declined. Your choices were respected.",
+      "sections": {
+        "10": {
+          "title": "Data retention"
+        },
+        "11": {
+          "title": "Images, references, and projects"
+        },
+        "12": {
+          "title": "Third-party tools"
+        },
+        "13": {
+          "title": "Updates and contact"
+        },
+        "01": {
+          "title": "Introduction"
+        },
+        "02": {
+          "title": "Who controls the data"
+        },
+        "03": {
+          "title": "Data that may be collected"
+        },
+        "04": {
+          "title": "How data is used"
+        },
+        "05": {
+          "title": "Legal basis"
+        },
+        "06": {
+          "title": "Data sharing"
+        },
+        "07": {
+          "title": "Cookies and similar technologies"
+        },
+        "08": {
+          "title": "Privacy rights"
+        },
+        "09": {
+          "title": "Data security"
+        }
+      }
+    },
+    "terms": {
+      "title": "Terms of Use",
+      "h1": "1. Terms",
+      "p1": "By accessing the ZERRAINK website, you agree to comply with these terms of service, all applicable laws and regulations and agree that you are responsible for compliance with all applicable local laws.",
+      "h2": "2. License Use",
+      "p2": "Permission is granted to temporarily download a copy of the materials on the ZERRAINK website, for personal and non-commercial transitory viewing only.",
+      "h3": "3. Disclaimer",
+      "p3": "The materials on the ZERRAINK website are provided 'as is'. ZERRAINK makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties.",
+      "indexHeader": "Index",
+      "sections": {
+        "10": {
+          "title": "Touch-ups"
+        },
+        "11": {
+          "title": "Cover-up and restoration"
+        },
+        "12": {
+          "title": "Intellectual property"
+        },
+        "13": {
+          "title": "Images and disclosure"
+        },
+        "14": {
+          "title": "Limitation of liability"
+        },
+        "15": {
+          "title": "External links"
+        },
+        "16": {
+          "title": "Terms updates"
+        },
+        "17": {
+          "title": "Contact"
+        },
+        "01": {
+          "title": "Acceptance"
+        },
+        "02": {
+          "title": "Website purpose"
+        },
+        "03": {
+          "title": "Quotes"
+        },
+        "04": {
+          "title": "Booking"
+        },
+        "05": {
+          "title": "Deposit, payments, and cancellations"
+        },
+        "06": {
+          "title": "References and artistic creation"
+        },
+        "07": {
+          "title": "Project changes"
+        },
+        "08": {
+          "title": "Session requirements"
+        },
+        "09": {
+          "title": "Aftercare"
+        }
+      }
+    },
+    "updatedAt": "Updated on",
+    "updatedDate": "June 2026",
+    "onThisPage": "On this page"
+  },
+  "languageSelector": {
+    "pt": "Portuguese",
+    "en": "English",
+    "es": "Spanish",
+    "aria": {
+      "pt": "Change language to Portuguese",
+      "en": "Change language to English",
+      "es": "Change language to Spanish"
+    }
+  }
+}
