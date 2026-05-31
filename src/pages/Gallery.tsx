@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { useTranslation } from 'react-i18next';
 import { BackButton } from '../components/Common';
-import { X, ChevronLeft, ChevronRight } from 'lucide-react';
+import { X, ChevronLeft, ChevronRight, ChevronDown } from 'lucide-react';
 import SEO from '../components/SEO';
 import { tattooImages } from '../assets/tattooImages';
 
@@ -120,13 +120,28 @@ interface GalleryImageTileProps {
 }
 
 const GalleryImageTile = React.memo(({ src, alt, index, onOpen }: GalleryImageTileProps) => {
+  const imageRef = useRef<HTMLImageElement | null>(null);
   const [loaded, setLoaded] = useState(false);
   const [error, setError] = useState(false);
   const isFirst = index === 0;
+  const isPriorityImage = index < PRELOAD_BATCH_SIZE;
 
   useEffect(() => {
     setLoaded(false);
     setError(false);
+  }, [src]);
+
+  useEffect(() => {
+    const image = imageRef.current;
+    if (!image) return;
+
+    if (image.complete) {
+      if (image.naturalWidth > 0) {
+        setLoaded(true);
+      } else {
+        setError(true);
+      }
+    }
   }, [src]);
 
   return (
@@ -145,17 +160,23 @@ const GalleryImageTile = React.memo(({ src, alt, index, onOpen }: GalleryImageTi
         </div>
       ) : (
         <img
+          ref={imageRef}
           src={src}
           alt={alt}
           className={`w-full h-full object-cover scale-100 group-hover:scale-104 transition-all duration-700 ${loaded ? 'opacity-100' : 'opacity-0'}`}
           width={isFirst ? 1200 : 800}
           height={isFirst ? 600 : 800}
-          loading={index < 2 ? 'eager' : 'lazy'}
+          loading={isPriorityImage ? 'eager' : 'lazy'}
           decoding="async"
           fetchPriority={index === 0 ? 'high' : 'auto'}
           referrerPolicy="no-referrer"
           onLoad={() => setLoaded(true)}
-          onError={() => setError(true)}
+          onError={() => {
+            setError(true);
+            if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+              console.warn(`[gallery] Falha ao carregar imagem: ${src}`);
+            }
+          }}
         />
       )}
     </button>
@@ -166,28 +187,65 @@ GalleryImageTile.displayName = 'GalleryImageTile';
 
 const GalleryPage = () => {
   const { t } = useTranslation();
-  const [filter, setFilter] = useState<GalleryCategoryId>('realism');
-  const [displayedFilter, setDisplayedFilter] = useState<GalleryCategoryId>('realism');
+  const [filter, setFilter] = useState<GalleryCategoryId | null>(null);
+  const [displayedFilter, setDisplayedFilter] = useState<GalleryCategoryId | null>(null);
+  const [isAlbumSelectorOpen, setIsAlbumSelectorOpen] = useState(false);
   const [isGridLoading, setIsGridLoading] = useState(false);
   const [selectedIdx, setSelectedIdx] = useState<number | null>(null);
   const preloadRequestRef = useRef(0);
+  const preloadedCategoriesRef = useRef<Set<GalleryCategoryId>>(new Set());
 
-  const selectedData = STYLISH_GALLERY_IMAGES[filter] || STYLISH_GALLERY_IMAGES.realism;
-  const displayedData = STYLISH_GALLERY_IMAGES[displayedFilter] || STYLISH_GALLERY_IMAGES.realism;
-  const currentCategory = categories.find((category) => category.id === filter);
+  const selectedData = filter ? STYLISH_GALLERY_IMAGES[filter] : null;
+  const displayedData = displayedFilter ? STYLISH_GALLERY_IMAGES[displayedFilter] : null;
+  const currentCategory = filter ? categories.find((category) => category.id === filter) : undefined;
+  const selectedImages = selectedData?.images;
+  const displayedImages = displayedData?.images;
 
   const changeCategory = useCallback((categoryId: GalleryCategoryId) => {
     if (categoryId === filter) return;
 
     setSelectedIdx(null);
     setFilter(categoryId);
+
+    if (preloadedCategoriesRef.current.has(categoryId)) {
+      setDisplayedFilter(categoryId);
+      setIsGridLoading(false);
+      return;
+    }
+
+    setIsGridLoading(true);
   }, [filter]);
 
+  const toggleAlbumSelector = useCallback(() => {
+    setIsAlbumSelectorOpen((wasOpen) => {
+      const nextOpen = !wasOpen;
+
+      if (!nextOpen) {
+        preloadRequestRef.current += 1;
+        setSelectedIdx(null);
+        setFilter(null);
+        setDisplayedFilter(null);
+        setIsGridLoading(false);
+      }
+
+      return nextOpen;
+    });
+  }, []);
+
   const warmupCategory = useCallback((categoryId: GalleryCategoryId) => {
-    void preloadImages(STYLISH_GALLERY_IMAGES[categoryId].images, PRELOAD_BATCH_SIZE);
+    if (preloadedCategoriesRef.current.has(categoryId)) return;
+
+    void preloadImages(STYLISH_GALLERY_IMAGES[categoryId].images, PRELOAD_BATCH_SIZE).then(() => {
+      preloadedCategoriesRef.current.add(categoryId);
+    });
   }, []);
 
   useEffect(() => {
+    if (!filter || !selectedImages) {
+      setIsGridLoading(false);
+      return;
+    }
+
     if (filter === displayedFilter) {
       setIsGridLoading(false);
       return;
@@ -197,24 +255,35 @@ const GalleryPage = () => {
     preloadRequestRef.current = requestId;
     setIsGridLoading(true);
 
-    preloadImages(selectedData.images, PRELOAD_BATCH_SIZE).then(() => {
+    preloadImages(selectedImages, PRELOAD_BATCH_SIZE).then(() => {
       if (preloadRequestRef.current !== requestId) return;
 
+      preloadedCategoriesRef.current.add(filter);
       setDisplayedFilter(filter);
       setIsGridLoading(false);
     });
-  }, [filter, displayedFilter, selectedData.images]);
+  }, [filter, displayedFilter, selectedImages]);
 
   useEffect(() => {
+    if (!displayedFilter || !displayedImages) return;
+    if (preloadedCategoriesRef.current.has(displayedFilter)) return;
+
+    void preloadImages(displayedImages, PRELOAD_BATCH_SIZE).then(() => {
+      preloadedCategoriesRef.current.add(displayedFilter);
+    });
+  }, [displayedFilter, displayedImages]);
+
+  useEffect(() => {
+    if (!displayedImages) return;
     if (selectedIdx === null) return;
 
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
         setSelectedIdx(null);
       } else if (e.key === 'ArrowRight') {
-        setSelectedIdx((prev) => (prev === null ? null : (prev + 1) % displayedData.images.length));
+        setSelectedIdx((prev) => (prev === null ? null : (prev + 1) % displayedImages.length));
       } else if (e.key === 'ArrowLeft') {
-        setSelectedIdx((prev) => (prev === null ? null : (prev - 1 + displayedData.images.length) % displayedData.images.length));
+        setSelectedIdx((prev) => (prev === null ? null : (prev - 1 + displayedImages.length) % displayedImages.length));
       }
     };
 
@@ -226,7 +295,7 @@ const GalleryPage = () => {
       window.removeEventListener('keydown', handleKeyDown);
       document.body.style.overflow = originalOverflow;
     };
-  }, [selectedIdx, displayedData.images.length]);
+  }, [selectedIdx, displayedImages]);
 
   return (
     <div className="pt-[var(--header-height)] bg-[#FAF9F6] text-zinc-900 min-h-screen">
@@ -254,14 +323,48 @@ const GalleryPage = () => {
       </section>
 
       <section className="bg-[#FAF9F6] pt-6 pb-16 md:pt-8 md:pb-20">
-        <div className="max-w-7xl mx-auto px-6 space-y-12">
-          <div className="w-full pb-6">
-            <div className="flex items-center w-full gap-4">
-              <div className="shrink-0 flex items-center h-11">
-                <BackButton to="/" label={t('common.back') || 'Voltar'} />
-              </div>
+        <div className="max-w-7xl mx-auto px-6 space-y-8">
+          <div className="shrink-0 flex items-center h-11">
+            <BackButton to="/" label={t('common.back') || 'Voltar'} />
+          </div>
 
-              <div className="ml-auto flex items-center justify-start md:justify-end gap-3 overflow-x-auto select-none py-1 max-w-full">
+          <div className="space-y-5">
+            <div data-gallery-selector className="rounded-2xl border border-zinc-200 bg-[#FAF9F6] shadow-[0_18px_50px_rgba(5,5,5,0.04)] overflow-hidden">
+              <button
+                type="button"
+                onClick={toggleAlbumSelector}
+                aria-expanded={isAlbumSelectorOpen}
+                aria-controls="gallery-style-selector"
+                className="w-full flex items-center justify-between gap-5 px-5 sm:px-7 py-5 text-left cursor-pointer"
+              >
+                <span className="min-w-0">
+                  <span className="block font-display text-[11px] sm:text-xs font-extrabold tracking-[0.18em] uppercase text-zinc-950">
+                    {t('gallery.selector.title') || 'EXPLORAR ESTILOS DA GALERIA'}
+                  </span>
+                  <span className="mt-1.5 block font-sans text-xs sm:text-sm leading-relaxed tracking-normal normal-case text-zinc-500">
+                    {t('gallery.selector.subtitle') || 'Escolha um album e mergulhe nos detalhes de cada traco.'}
+                  </span>
+                </span>
+                <ChevronDown
+                  size={20}
+                  strokeWidth={2}
+                  className={`shrink-0 text-[#005F73] transition-transform duration-300 ${isAlbumSelectorOpen ? 'rotate-180' : ''}`}
+                  aria-hidden="true"
+                />
+              </button>
+
+              <AnimatePresence initial={false}>
+                {isAlbumSelectorOpen && (
+                  <motion.div
+                    id="gallery-style-selector"
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: 'auto', opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.25, ease: 'easeInOut' }}
+                    className="overflow-hidden"
+                  >
+                    <div className="border-t border-zinc-200 px-5 sm:px-7 py-5">
+                      <div data-gallery-category-list className="flex flex-col xl:flex-row items-stretch xl:items-center gap-3 select-none">
                 {categories.map((cat) => {
                   const isSelected = filter === cat.id;
                   return (
@@ -271,26 +374,38 @@ const GalleryPage = () => {
                       onClick={() => changeCategory(cat.id)}
                       onMouseEnter={() => warmupCategory(cat.id)}
                       onFocus={() => warmupCategory(cat.id)}
-                      className={`h-11 min-h-[44px] w-[158px] shrink-0 inline-flex items-center justify-center rounded-full !font-sans !text-[10px] !sm:text-[11px] !font-extrabold !tracking-[0.2em] !uppercase transition-all duration-300 cursor-pointer whitespace-nowrap mb-0 border ${
+                      aria-pressed={isSelected}
+                      className={`h-11 min-h-[44px] w-full xl:w-[158px] shrink-0 inline-flex items-center justify-between xl:justify-center rounded-xl xl:rounded-full px-4 xl:px-0 !font-sans !text-[10px] sm:!text-[11px] !font-extrabold !tracking-[0.2em] !uppercase transition-all duration-300 cursor-pointer whitespace-nowrap mb-0 border ${
                         isSelected
                           ? 'bg-[#005F73] border-[#005F73] hover:bg-[#004d5e] hover:border-[#004d5e] text-white shadow-xs'
                           : 'bg-white hover:bg-zinc-900/5 border-zinc-300 hover:border-zinc-500 text-zinc-900 hover:text-zinc-900'
                       }`}
                     >
-                      {t(`gallery.categories.${cat.id}`) || cat.title}
+                      <span>{t(`gallery.categories.${cat.id}`) || cat.title}</span>
+                      <ChevronRight size={16} strokeWidth={2} className="xl:hidden text-current" aria-hidden="true" />
                     </button>
                   );
                 })}
-              </div>
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
+
+            <p className="font-sans text-xs sm:text-sm text-zinc-500 text-center leading-relaxed">
+              {t('gallery.selector.photoHint') || 'Primeiro, escolha um estilo. Depois, clique em uma foto para ampliar e navegar pela galeria.'}
+            </p>
           </div>
 
-          <div className="pt-4">
-            {isGridLoading ? (
-              <GallerySkeletonGrid count={Math.min(PRELOAD_BATCH_SIZE, selectedData.images.length)} />
-            ) : (
-              <div key={`grid-${displayedFilter}`} className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6">
-                {displayedData.images.map((imgUrl, idx) => (
+          <div className="space-y-8">
+            {filter && (
+              <div className="pt-2" aria-busy={isGridLoading}>
+                {isGridLoading ? (
+                  <GallerySkeletonGrid count={Math.min(PRELOAD_BATCH_SIZE, selectedData?.images.length || PRELOAD_BATCH_SIZE)} />
+                ) : displayedData ? (
+                  <div data-gallery-grid key={`grid-${displayedFilter}`} className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6">
+                    {displayedData.images.map((imgUrl, idx) => (
                   <GalleryImageTile
                     key={`${displayedFilter}-${imgUrl}`}
                     src={imgUrl}
@@ -298,20 +413,39 @@ const GalleryPage = () => {
                     index={idx}
                     onOpen={() => setSelectedIdx(idx)}
                   />
-                ))}
+                    ))}
+                  </div>
+                ) : null}
               </div>
             )}
+
+            <div data-gallery-empty-card className="rounded-2xl border border-[#005F73]/25 bg-[#050505] text-white shadow-[0_24px_70px_rgba(5,5,5,0.16)] overflow-hidden">
+              <div className="p-7 sm:p-9 lg:p-10">
+                <div className="max-w-4xl mx-auto space-y-4 text-left sm:text-center">
+                  <div className="w-14 h-[1.5px] bg-[#005F73] sm:mx-auto" />
+                  <h2 className="font-serif text-2xl sm:text-3xl leading-tight tracking-[-0.02em] text-[#FAF9F6]">
+                    {t('gallery.emptyState.title') || 'Escolha um estilo para começar'}
+                  </h2>
+                  <p className="font-sans text-sm sm:text-base leading-relaxed text-zinc-300">
+                    {t('gallery.emptyState.description') || 'Cada álbum reúne trabalhos separados por estética, técnica e proposta visual.'}
+                  </p>
+                  <p className="font-sans text-sm sm:text-base leading-relaxed text-zinc-400">
+                    {t('gallery.emptyState.prompt') || 'Selecione uma categoria acima para explorar as fotos em detalhes.'}
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       <AnimatePresence>
-        {selectedIdx !== null && (
+        {selectedIdx !== null && displayedData && displayedFilter && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-[#050505]/98 z-[9999] flex items-center justify-center select-none"
+            className="fixed inset-0 bg-[#050505]/88 z-[9999] flex items-center justify-center select-none"
           >
             <button
               onClick={() => setSelectedIdx(null)}
@@ -321,7 +455,7 @@ const GalleryPage = () => {
               <X size={28} strokeWidth={1.5} />
             </button>
 
-            {displayedData.images.length > 1 && (
+            {displayedData && displayedData.images.length > 1 && (
               <button
                 onClick={(e) => {
                   e.stopPropagation();
@@ -334,7 +468,7 @@ const GalleryPage = () => {
               </button>
             )}
 
-            {displayedData.images.length > 1 && (
+            {displayedData && displayedData.images.length > 1 && (
               <button
                 onClick={(e) => {
                   e.stopPropagation();
@@ -357,7 +491,7 @@ const GalleryPage = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.97 }}
                 transition={{ duration: 0.2 }}
-                src={displayedData.images[selectedIdx]}
+                src={displayedData?.images[selectedIdx] || ''}
                 alt={`${t('gallery.expandedAlt') || 'Imagem ampliada'} ${selectedIdx + 1}`}
                 className="max-w-full max-h-[60vh] md:max-h-[65vh] object-contain rounded-xl border border-white/10 shadow-2xl pointer-events-auto"
                 loading="eager"
@@ -368,11 +502,11 @@ const GalleryPage = () => {
 
               <div className="mt-6 flex flex-col items-center gap-3.5 text-center pointer-events-auto">
                 <h3 className="text-white text-sm sm:text-base font-serif tracking-widest uppercase font-semibold">
-                  {t(`techniques.${displayedFilter}.title`) || styleFullNames[displayedFilter]}
+                  {displayedFilter ? (t(`techniques.${displayedFilter}.title`) || styleFullNames[displayedFilter]) : ''}
                 </h3>
 
                 <div className="flex flex-wrap items-center justify-center gap-2 max-w-xs sm:max-w-md pb-1">
-                  {displayedData.images.map((_, dotIdx) => (
+                  {displayedData?.images.map((_, dotIdx) => (
                     <button
                       key={dotIdx}
                       onClick={() => setSelectedIdx(dotIdx)}
@@ -385,7 +519,7 @@ const GalleryPage = () => {
                 </div>
 
                 <div className="text-white/45 text-[10px] sm:text-xs tracking-widest font-mono">
-                  {selectedIdx + 1} / {displayedData.images.length}
+                  {selectedIdx + 1} / {displayedData?.images.length || 0}
                 </div>
               </div>
             </div>

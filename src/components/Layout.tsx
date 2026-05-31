@@ -140,10 +140,10 @@ export const Navbar = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setIsOpen(false)}
-              className="fixed inset-0 bg-[#050505]/40 backdrop-blur-[6px] z-[99998] lg:hidden"
+              className="fixed inset-0 bg-[#050505]/40 backdrop-blur-[6px] z-[99998] min-[1025px]:hidden"
             />
             {/* Floating Off-White Mobile Menu Panel */}
-            <div className="fixed inset-0 z-[99999] flex justify-end p-0 md:p-6 pointer-events-none lg:hidden">
+            <div className="fixed inset-0 z-[99999] flex justify-end p-0 md:p-6 pointer-events-none min-[1025px]:hidden">
               <motion.div 
                 initial={{ opacity: 0, x: '100%' }}
                 animate={{ opacity: 1, x: 0 }}
@@ -224,7 +224,7 @@ export const Navbar = () => {
                             i18n.changeLanguage(lng.code);
                             document.documentElement.lang = lng.code === 'pt' ? 'pt-BR' : lng.code;
                           }}
-                          className={`text-left text-[19px] font-sans font-semibold tracking-wide transition-colors py-1 cursor-pointer mobile-language-option ${
+                          className={`mobile-language-option w-full text-left text-[19px] font-sans font-semibold tracking-wide transition-colors py-2 cursor-pointer ${
                             isSelected ? 'text-[#005F73]' : 'text-zinc-950 hover:text-[#005F73]'
                           }`}
                         >
@@ -275,6 +275,9 @@ export const FooterFull = () => {
     { name: t('techniques.oldschool.title') || 'Old School', href: '/estilos' },
   ];
 
+  const footerTextClass = "text-gray-400 text-sm font-light leading-relaxed font-sans";
+  const footerLinkClass = `${footerTextClass} hover:text-white transition-all duration-300 flex items-center group`;
+
   return (
     <section className="pt-16 pb-12 bg-black border-t border-[#005F73]/20 overflow-hidden text-left text-white">
       <div className="max-w-7xl mx-auto px-6">
@@ -284,7 +287,7 @@ export const FooterFull = () => {
             <h4 className="text-[#005F73] text-[10px] tracking-[0.3em] font-bold uppercase mb-4 h-5 flex items-end">
               {t('footer.concept') || 'O ESTÚDIO'}
             </h4>
-            <p className="text-gray-400 text-sm font-light leading-relaxed whitespace-pre-line text-left">
+            <p className={`${footerTextClass} whitespace-pre-line text-left`}>
               {t('footer.about')}
             </p>
           </div>
@@ -295,7 +298,7 @@ export const FooterFull = () => {
             <ul className="space-y-2.5">
               {navLinks.map((link) => (
                 <li key={link.name}>
-                  <Link to={link.href} className="text-gray-400 hover:text-white text-sm font-light transition-all duration-300 flex items-center group">
+                  <Link to={link.href} className={footerLinkClass}>
                     <span className="w-0 group-hover:w-3.5 h-[1px] bg-[#005F73] mr-0 group-hover:mr-2 transition-all duration-300"></span>
                     {link.name}
                   </Link>
@@ -310,7 +313,7 @@ export const FooterFull = () => {
             <ul className="space-y-2.5">
               {specialties.map((spec) => (
                 <li key={spec.name}>
-                  <Link to={spec.href} className="text-gray-400 hover:text-white text-sm font-light transition-all duration-300 flex items-center group">
+                  <Link to={spec.href} className={footerLinkClass}>
                     <span className="w-0 group-hover:w-3.5 h-[1px] bg-[#005F73] mr-0 group-hover:mr-2 transition-all duration-300"></span>
                     {spec.name}
                   </Link>
@@ -334,7 +337,7 @@ export const FooterFull = () => {
                 </div>
                 <div>
                   <p className="text-gray-400 text-[10px] uppercase tracking-widest font-bold mb-0.5 group-hover:text-[#005F73] transition-colors">{t('footer.labels.whatsapp')}</p>
-                  <p className="text-gray-400 text-sm font-light hover:text-white transition-colors duration-300 group-hover:text-white">(16) 98216-0902</p>
+                  <p className={`${footerTextClass} hover:text-white transition-colors duration-300 group-hover:text-white`}>(16) 98216-0902</p>
                 </div>
               </a>
               <div className="flex items-start gap-4 group">
@@ -343,8 +346,8 @@ export const FooterFull = () => {
                 </div>
                 <div>
                   <p className="text-gray-400 text-[10px] uppercase tracking-widest font-bold mb-0.5">{t('footer.labels.address')}</p>
-                  <p className="text-gray-400 text-sm font-light hover:text-white transition-colors duration-300">Rua Casemiro de Abreu, 256, Sala 26</p>
-                  <p className="text-gray-400 text-xs font-light mt-0.5">{t('footer.values.city')}</p>
+                  <p className={`${footerTextClass} hover:text-white transition-colors duration-300`}>Rua Casemiro de Abreu, 256, Sala 26</p>
+                  <p className={`${footerTextClass} mt-0.5`}>{t('footer.values.city')}</p>
                 </div>
               </div>
             </div>

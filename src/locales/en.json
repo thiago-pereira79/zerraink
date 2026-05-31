@@ -491,11 +491,25 @@
   "gallery": {
     "categories": {
       "todos": "All",
+      "realism": "Realism",
       "realismo": "Realism",
       "fineline": "Fine Line",
+      "ornamental": "Ornamental",
       "blackwork": "Blackwork",
       "colorido": "Color",
+      "coverup": "Cover-up",
+      "oldschool": "Old School",
       "autoral": "Authorial"
+    },
+    "selector": {
+      "title": "EXPLORE GALLERY STYLES",
+      "subtitle": "Choose an album and dive into the details of each line.",
+      "photoHint": "First, choose a style. Then click a photo to enlarge it and browse the gallery."
+    },
+    "emptyState": {
+      "title": "Choose a style to begin",
+      "description": "Each album brings together work separated by aesthetic, technique, and visual purpose.",
+      "prompt": "Select a category above to explore the photos in detail."
     },
     "items": {
       "item1": {

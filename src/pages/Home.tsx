@@ -20,11 +20,19 @@ const sectionTitleClass = "font-serif text-2xl sm:text-3.5xl md:text-4xl lg:text
 const sectionCtaClass = "group text-[#005F73] hover:text-[#004e5f] text-xs font-bold uppercase tracking-[0.2em] inline-flex items-center gap-2 pb-1 border-b border-[#005F73]/30 hover:border-[#004e5f]/50 transition-all duration-300 cursor-pointer font-sans select-none";
 
 const Home = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const featuredTestimonial = TESTIMONIALS.find(item => item.name === "THIAGO") || TESTIMONIALS[0];
   const studioVideoRef = useRef<HTMLVideoElement>(null);
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
+  const heroDescription = t('hero.description') || 'Estúdio de tatuagem em Ribeirão Preto, especializado em projetos autorais criados com técnica, presença e significado.';
+  const heroDescriptionParts = i18n.language?.toLowerCase().startsWith('pt')
+    ? heroDescription
+        .replace(', especializado', ',|especializado')
+        .replace('autorais criados', 'autorais|criados')
+        .split('|')
+    : [];
+  const heroDescriptionLines = heroDescriptionParts.length === 3 ? heroDescriptionParts : null;
 
   const toggleStudioVideo = () => {
     if (!studioVideoRef.current) return;
@@ -133,12 +141,12 @@ const Home = () => {
     <div className="bg-[#FAF9F6] text-zinc-900 relative font-sans overflow-x-hidden min-h-screen">
       <SEO 
         title="ZERRAINK STUDIO"
-        description={t('hero.description') || 'Estúdio de tatuagem em Ribeirão Preto, especializado em projetos autorais criados com técnica, presença e significado.'}
+        description={heroDescription}
         canonical="/"
       />
       
       {/* 1. HERO SECTION - Premium Minimalist Dark Layout */}
-      <section className="relative min-h-[calc(100vh-var(--header-height))] flex flex-col justify-center pt-32 sm:pt-36 pb-16 sm:pb-20 lg:pb-24 bg-[#050505] overflow-hidden select-none">
+      <section className="home-hero-background relative min-h-[calc(100vh-var(--header-height))] flex flex-col justify-center pt-32 sm:pt-36 pb-16 sm:pb-20 lg:pb-24 bg-[#050505] overflow-hidden select-none">
 
         <div className="max-w-7xl mx-auto px-6 w-full relative z-10 flex flex-col items-center text-center">
           
@@ -160,12 +168,19 @@ const Home = () => {
           </div>
 
           {/* Descriptive text block */}
-          <p className="text-zinc-400 font-light text-sm sm:text-base leading-relaxed max-w-[720px] mx-auto text-center px-4">
-            {t('hero.description') || 'Estúdio de tatuagem em Ribeirão Preto, especializado em projetos autorais criados com técnica, presença e significado.'}
+          <p className={`hero-subtitle ${heroDescriptionLines ? 'hero-subtitle--split' : ''} text-zinc-400 font-light text-sm sm:text-base leading-relaxed max-w-[720px] mx-auto text-center px-4`}>
+            {heroDescriptionLines
+              ? heroDescriptionLines.map((line, index) => (
+                  <span key={line}>
+                    {line}
+                    {index < heroDescriptionLines.length - 1 ? ' ' : ''}
+                  </span>
+                ))
+              : heroDescription}
           </p>
 
-          {/* Horizontal badges row */}
-          <div className="flex flex-wrap items-center justify-center gap-4.5 mt-10 max-w-4xl mx-auto">
+          {/* Hero badges */}
+          <div className="hero-badge-grid mt-10 w-full mx-auto">
             {[
               { key: 'autoral', defaultLabel: 'AUTORAL', icon: <Sparkles size={15} className="text-[#005F73]" /> },
               { key: 'exclusive', defaultLabel: 'EXCLUSIVO', icon: <Shield size={15} className="text-[#005F73]" /> },
@@ -174,7 +189,7 @@ const Home = () => {
             ].map((badge) => (
               <div 
                 key={badge.key} 
-                className="flex items-center gap-2.5 px-6 py-3.5 bg-[#050505]/40 border border-[#005F73]/25 hover:border-[#005F73]/55 transition-all duration-300 rounded-lg shadow-sm"
+                className="hero-badge-card flex items-center justify-center gap-2.5 px-6 py-3.5 bg-[#050505]/40 border border-[#005F73]/25 hover:border-[#005F73]/55 transition-all duration-300 rounded-lg shadow-sm"
               >
                 {badge.icon}
                 <span className="text-white text-[12px] font-bold tracking-[0.2em] font-sans">

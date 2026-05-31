@@ -25,9 +25,9 @@ const LanguageSelector = ({ className = "" }: { className?: string }) => {
         <React.Fragment key={lng.code}>
           <button
             onClick={() => changeLanguage(lng.code)}
-            className={`text-[12px] font-semibold tracking-wider transition-all duration-300 cursor-pointer ${
+            className={`language-selector-button inline-flex items-center border-b border-transparent pb-0.5 transition-all duration-300 cursor-pointer ${
               i18n.language.startsWith(lng.code) 
-                ? 'text-[#005F73] opacity-100 font-bold border-b border-[#005F73]' 
+                ? 'text-[#005F73] opacity-100 border-[#005F73]' 
                 : (isHome ? 'text-white/60 hover:text-white' : 'text-zinc-500 hover:text-[#005F73]')
             }`}
             aria-label={t(`languageSelector.aria.${lng.code}`)}
@@ -35,7 +35,7 @@ const LanguageSelector = ({ className = "" }: { className?: string }) => {
             {lng.label}
           </button>
           {idx < languages.length - 1 && (
-            <span className={isHome ? "text-white/20 text-[11px]" : "text-zinc-300 text-[11px]"}>|</span>
+            <span className={`language-selector-separator inline-flex items-center ${isHome ? "text-white/20" : "text-zinc-300"}`} aria-hidden="true">|</span>
           )}
         </React.Fragment>
       ))}

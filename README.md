@@ -16,7 +16,7 @@ O **ZERRAINK STUDIO** é um site desenvolvido para apresentar o trabalho do tatu
 
 A proposta do projeto é unir **identidade visual premium**, **experiência de navegação clara** e **presença digital profissional**, criando um ambiente elegante, direto e funcional para quem deseja conhecer o estúdio, explorar estilos e iniciar uma conversa sobre um novo projeto de tatuagem.
 
-O site foi pensado para transmitir confiança, personalidade e cuidado em cada detalhe — da primeira dobra da página até o contato final.
+O site foi pensado para transmitir confiança, personalidade e cuidado em cada detalhe, da primeira dobra da página até o contato final.
 
 ---
 
