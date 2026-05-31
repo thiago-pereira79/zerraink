@@ -59,7 +59,6 @@
     "styles": "Styles",
     "gallery": "Gallery",
     "videos": "Videos",
-    "festivais": "Festivals",
     "contact": "Contact"
   },
   "hero": {
@@ -550,14 +549,6 @@
       }
     }
   },
-  "festivals": {
-    "intro": {
-      "title": "Records of presence, exchange and recognition in the art of storytelling.",
-      "description": "Each festival represents exchange, evolution and presence within the art of tattooing. Here, some records of events, backstage and moments that are part of the ZERRAINK trajectory."
-    },
-    "eventAltPrefix": "Artist's participation in the event",
-    "badge": "Trajectory Record"
-  },
   "videos": {
     "video1": {
       "title": "Behind the stroke",
@@ -603,10 +594,6 @@
     "behind": {
       "title": "Backstage and Videos | ZERRAINK Studio",
       "description": "Explore the creative process, the backstage and watch videos of the sessions at ZERRAINK Studio in Ribeirão Preto."
-    },
-    "festivals": {
-      "title": "Festivals and Recognition | ZERRAINK Studio",
-      "description": "Check out my trajectory in tattoo conventions and festivals throughout Brazil."
     },
     "privacy": {
       "title": "Privacy Policy | ZERRAINK Studio",

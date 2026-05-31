@@ -5,22 +5,7 @@ export interface Testimonial {
   text: string;
 }
 
-export interface Event {
-  id: number;
-  title: string;
-  location: string;
-  year: string;
-  image: string;
-}
-
 export const FALLBACK_IMAGE = 'https://images.unsplash.com/photo-1550537687-c91072c4792d?auto=format&fit=crop&q=80&w=1200&sat=-100';
-
-export const EVENTS: Event[] = [
-  { id: 1, title: 'Tattoo Week', location: 'São Paulo', year: '2024', image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800' },
-  { id: 2, title: 'Rio Tattoo Expo', location: 'Rio de Janeiro', year: '2024', image: 'https://images.unsplash.com/photo-1550537687-c91072c4792d?auto=format&fit=crop&q=80&w=800' },
-  { id: 3, title: 'Ink Experience', location: 'Curitiba', year: '2023', image: 'https://images.unsplash.com/photo-1597852074816-d933c4d2b988?auto=format&fit=crop&q=80&w=800' },
-  { id: 4, title: 'Tattoo Fest', location: 'Brasília', year: '2023', image: 'https://images.unsplash.com/photo-1611501275019-2ea5c237e8c3?auto=format&fit=crop&q=80&w=800' },
-];
 
 export const TESTIMONIALS: Testimonial[] = [
   { id: 1, name: "VICTÓRIA", text: "Melhor tatuador, impossível! Eu amei demais minhas primeiras tattoos. É o único em quem confio." },

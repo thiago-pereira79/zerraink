@@ -147,8 +147,22 @@ const Home = () => {
       
       {/* 1. HERO SECTION - Premium Minimalist Dark Layout */}
       <section className="home-hero-background relative min-h-[calc(100vh-var(--header-height))] flex flex-col justify-center pt-32 sm:pt-36 pb-16 sm:pb-20 lg:pb-24 bg-[#050505] overflow-hidden select-none">
+        <picture className="hero-mobile-ornament hero-mobile-ornament-top" aria-hidden="true">
+          <source
+            media="(max-width: 1024px), (hover: none) and (pointer: coarse) and (max-width: 1366px)"
+            srcSet="/hero-superior-movel.png"
+          />
+          <img
+            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
+            width="2172"
+            height="724"
+            alt=""
+            decoding="async"
+            fetchPriority="high"
+          />
+        </picture>
 
-        <div className="max-w-7xl mx-auto px-6 w-full relative z-10 flex flex-col items-center text-center">
+        <div className="home-hero-content max-w-7xl mx-auto px-6 w-full relative z-10 flex flex-col items-center text-center">
           
           {/* Main big display headings */}
           <h1 className="font-serif text-4xl sm:text-6xl md:text-[76px] lg:text-[88px] font-extrabold leading-[1.04] tracking-tight uppercase max-w-5xl mx-auto">
@@ -157,7 +171,7 @@ const Home = () => {
           </h1>
 
           {/* Ornamental central line with diamonds */}
-          <div className="flex items-center justify-center gap-4 my-8 w-full max-w-lg mx-auto">
+          <div className="hero-divider flex items-center justify-center gap-4 my-8 w-full max-w-lg mx-auto">
             <div className="w-16 sm:w-24 h-[1px] bg-[#005F73]/30"></div>
             <div className="flex items-center gap-1.5 shrink-0">
               <div className="w-2.5 h-2.5 rotate-45 border border-[#005F73]/70"></div>
@@ -200,6 +214,21 @@ const Home = () => {
           </div>
 
         </div>
+
+        <picture className="hero-mobile-ornament hero-mobile-ornament-bottom" aria-hidden="true">
+          <source
+            media="(max-width: 1024px), (hover: none) and (pointer: coarse) and (max-width: 1366px)"
+            srcSet="/hero-inferior-movel.png"
+          />
+          <img
+            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
+            width="2172"
+            height="724"
+            alt=""
+            decoding="async"
+            fetchPriority="high"
+          />
+        </picture>
       </section>
 
       {/* 2. TRUST BANNER - Beautiful luxury off-white block section */}

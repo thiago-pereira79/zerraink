@@ -335,10 +335,16 @@ header nav a {
   isolation: isolate;
   min-height: clamp(760px, 56.3vw, 945px) !important;
   background-color: #050505 !important;
-  background-image: url("/hero.png") !important;
+  background-image: none !important;
   background-repeat: no-repeat;
   background-position: center top;
   background-size: 100% auto;
+}
+
+@media (min-width: 1025px) and (hover: hover), (min-width: 1367px) {
+  .home-hero-background {
+    background-image: url("/hero.png") !important;
+  }
 }
 
 .home-hero-background::before,
@@ -348,7 +354,7 @@ header nav a {
   top: 0;
   bottom: 0;
   width: min(44vw, 24rem);
-  background-image: url("/hero.png");
+  background-image: none;
   background-repeat: no-repeat;
   background-size: auto 100%;
   pointer-events: none;
@@ -389,6 +395,13 @@ header nav a {
   width: 100%;
   max-width: min(100%, 64rem) !important;
   overflow-wrap: normal;
+}
+
+@media (min-width: 1025px) and (hover: hover), (min-width: 1367px) {
+  .home-hero-background h1,
+  .home-hero-background .hero-title {
+    font-size: clamp(2.25rem, 6.45vw, 5.125rem) !important;
+  }
 }
 
 .home-hero-background h1 span {
@@ -443,6 +456,16 @@ header nav a {
   max-width: none;
 }
 
+.home-hero-background .hero-mobile-ornament {
+  display: none;
+}
+
+.home-hero-background .hero-mobile-ornament img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 @media (max-width: 1365px) {
   .home-hero-background {
     min-height: clamp(760px, calc(110vh - var(--header-height)), 900px) !important;
@@ -453,7 +476,7 @@ header nav a {
 
 @media (max-width: 1279px) {
   .home-hero-background {
-    background-image: url("/hero-disposivos-moveis.png") !important;
+    background-image: none !important;
     background-position: center top;
     background-size: cover;
   }
@@ -601,7 +624,7 @@ header nav a {
   }
 }
 
-@media (max-width: 1279px) and (orientation: landscape) {
+@media (max-width: 1279px) and (orientation: landscape) and (hover: hover) and (pointer: fine) {
   .home-hero-background {
     min-height: calc(100vw * 0.5628) !important;
     background-image: url("/hero.png") !important;
@@ -631,6 +654,201 @@ header nav a {
 
   .home-hero-background .hero-badge-card {
     max-width: none;
+  }
+}
+
+@media (max-width: 1024px), (hover: none) and (pointer: coarse) and (max-width: 1366px) {
+  .home-hero-background {
+    min-height: auto !important;
+    height: auto !important;
+    background-color: #000000 !important;
+    background-image: none !important;
+    background-size: auto !important;
+    background-position: center !important;
+    justify-content: flex-start !important;
+    padding-top: var(--header-height) !important;
+    padding-bottom: 0 !important;
+    overflow-x: hidden;
+  }
+
+  .home-hero-background::before,
+  .home-hero-background::after {
+    content: none !important;
+  }
+
+  .home-hero-background .hero-mobile-ornament {
+    display: block;
+    width: 100%;
+    max-width: none;
+    height: auto !important;
+    flex: 0 0 auto;
+    pointer-events: none;
+    user-select: none;
+    background: none !important;
+  }
+
+  .home-hero-background .hero-mobile-ornament img {
+    width: 100%;
+    max-width: none;
+    margin-left: 50%;
+    height: auto !important;
+    object-fit: contain;
+    object-position: center;
+    transform: translateX(-50%);
+  }
+
+  .home-hero-background .hero-mobile-ornament-top {
+    margin-bottom: clamp(0.75rem, 2.5vw, 1.75rem);
+  }
+
+  .home-hero-background .hero-mobile-ornament-bottom {
+    margin-top: clamp(0.85rem, 2.75vw, 2rem);
+  }
+
+  .home-hero-background .home-hero-content {
+    background: #000000 !important;
+    background-color: #000000 !important;
+    padding-top: clamp(1.25rem, 4.25vw, 2.75rem) !important;
+    padding-bottom: clamp(1.35rem, 4.5vw, 3rem) !important;
+  }
+
+  .home-hero-background .hero-divider {
+    margin-top: clamp(1.25rem, 4vw, 2rem) !important;
+    margin-bottom: clamp(1.25rem, 4vw, 2rem) !important;
+  }
+
+  .home-hero-background .hero-badge-grid {
+    margin-top: clamp(1.5rem, 4.5vw, 2.5rem) !important;
+  }
+}
+
+@media (max-width: 767px) and (orientation: portrait) {
+  .home-hero-background .hero-mobile-ornament-top {
+    margin-bottom: clamp(0.6rem, 3vw, 1rem);
+  }
+
+  .home-hero-background .hero-mobile-ornament-bottom {
+    margin-top: clamp(0.65rem, 3.25vw, 1.15rem);
+  }
+
+  .home-hero-background .hero-mobile-ornament img {
+    width: 118%;
+  }
+
+  .home-hero-background .hero-mobile-ornament-top img {
+    transform: translateX(-50%) translateY(0.45rem);
+  }
+
+  .home-hero-background .hero-mobile-ornament-bottom img {
+    transform: translateX(-50%) translateY(-0.45rem);
+  }
+
+  .home-hero-background .home-hero-content {
+    padding-top: clamp(1.15rem, 5vw, 1.8rem) !important;
+    padding-bottom: clamp(1.25rem, 5.25vw, 2rem) !important;
+  }
+}
+
+@media (max-width: 932px) and (orientation: landscape) {
+  .home-hero-background .hero-mobile-ornament img {
+    height: clamp(7.75rem, 14.85vw, 8.85rem) !important;
+    object-fit: cover;
+  }
+
+  .home-hero-background .hero-mobile-ornament-top img {
+    transform: translateX(-50%) translateY(0.3rem);
+  }
+
+  .home-hero-background .hero-mobile-ornament-bottom img {
+    transform: translateX(-50%) translateY(-0.3rem);
+  }
+
+  .home-hero-background .hero-mobile-ornament-top {
+    margin-bottom: clamp(0.45rem, 1.5vw, 0.8rem);
+  }
+
+  .home-hero-background .hero-mobile-ornament-top img {
+    object-position: center top;
+  }
+
+  .home-hero-background .hero-mobile-ornament-bottom {
+    margin-top: clamp(0.45rem, 1.75vw, 0.85rem);
+  }
+
+  .home-hero-background .hero-mobile-ornament-bottom img {
+    object-position: center bottom;
+  }
+
+  .home-hero-background .home-hero-content {
+    padding-top: clamp(0.85rem, 2.2vw, 1.25rem) !important;
+    padding-bottom: clamp(0.95rem, 2.5vw, 1.5rem) !important;
+  }
+
+  .home-hero-background .hero-divider {
+    margin-top: clamp(0.9rem, 2.5vw, 1.35rem) !important;
+    margin-bottom: clamp(0.9rem, 2.5vw, 1.35rem) !important;
+  }
+
+  .home-hero-background .hero-badge-grid {
+    margin-top: clamp(1.1rem, 3vw, 1.6rem) !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait), (hover: none) and (pointer: coarse) and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  .home-hero-background .hero-mobile-ornament-top {
+    margin-bottom: clamp(0.9rem, 2.25vw, 1.5rem);
+  }
+
+  .home-hero-background .hero-mobile-ornament-bottom {
+    margin-top: clamp(1rem, 2.5vw, 1.75rem);
+  }
+
+  .home-hero-background .hero-mobile-ornament img {
+    width: 122%;
+  }
+
+  .home-hero-background .hero-mobile-ornament-top img {
+    transform: translateX(-50%) translateY(0.7rem);
+  }
+
+  .home-hero-background .hero-mobile-ornament-bottom img {
+    transform: translateX(-50%) translateY(-0.7rem);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1366px) and (orientation: landscape) and (hover: none) and (pointer: coarse) {
+  .home-hero-background .hero-mobile-ornament img {
+    height: clamp(10.85rem, 15.35vw, 13.6rem) !important;
+    object-fit: cover;
+  }
+
+  .home-hero-background .hero-mobile-ornament-top img {
+    transform: translateX(-50%) translateY(0.45rem);
+  }
+
+  .home-hero-background .hero-mobile-ornament-bottom img {
+    transform: translateX(-50%) translateY(-0.45rem);
+  }
+
+  .home-hero-background .hero-mobile-ornament-top {
+    margin-bottom: clamp(0.75rem, 1.5vw, 1.25rem);
+  }
+
+  .home-hero-background .hero-mobile-ornament-top img {
+    object-position: center top;
+  }
+
+  .home-hero-background .hero-mobile-ornament-bottom {
+    margin-top: clamp(0.85rem, 1.75vw, 1.4rem);
+  }
+
+  .home-hero-background .hero-mobile-ornament-bottom img {
+    object-position: center bottom;
+  }
+
+  .home-hero-background .home-hero-content {
+    padding-top: clamp(1rem, 2vw, 1.75rem) !important;
+    padding-bottom: clamp(1rem, 2.2vw, 2rem) !important;
   }
 }
 

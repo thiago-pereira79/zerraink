@@ -60,7 +60,6 @@
     "styles": "Estilos",
     "gallery": "Galeria",
     "videos": "Vídeos",
-    "festivais": "Festivais",
     "contact": "Contato"
   },
   "hero": {
@@ -551,14 +550,6 @@
       }
     }
   },
-  "festivals": {
-    "intro": {
-      "title": "Registros de presença, troca e reconhecimento na arte da tatuagem.",
-      "description": "Cada festival representa troca, evolução e presença dentro da arte da tatuagem. Aqui, alguns registros de eventos, bastidores e momentos que fazem parte da trajetória da ZERRAINK."
-    },
-    "eventAltPrefix": "Participação do artista no evento",
-    "badge": "Registro de Trajetória"
-  },
   "videos": {
     "video1": {
       "title": "Por trás do traço",
@@ -604,10 +595,6 @@
     "behind": {
       "title": "Bastidores e Vídeos | ZERRAINK Studio",
       "description": "Explore o processo criativo, os bastidores e assista aos vídeos das sessões no ZERRAINK Studio em Ribeirão Preto."
-    },
-    "festivals": {
-      "title": "Festivais e Reconhecimento | ZERRAINK Studio",
-      "description": "Confira a minha trajetória em convenções de tatuagem e festivais por todo o Brasil."
     },
     "privacy": {
       "title": "Pol?tica de Privacidade | ZERRAINK Est?dio",

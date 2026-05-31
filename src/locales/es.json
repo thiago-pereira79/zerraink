@@ -60,7 +60,6 @@
     "styles": "Estilos",
     "gallery": "Galería",
     "videos": "Vídeos",
-    "festivais": "Festivales",
     "contact": "Contacto"
   },
   "hero": {
@@ -551,14 +550,6 @@
       }
     }
   },
-  "festivals": {
-    "intro": {
-      "title": "Registros de presencia, intercambio y reconocimiento en el arte del tatuaje.",
-      "description": "Cada festival representa intercambio, evolución y presencia dentro de la arte del tatuaje. Aquí, algunos registros de eventos, bastidores y momentos que forman parte de la trayectoria de ZERRAINK."
-    },
-    "eventAltPrefix": "Participación del artista en el evento",
-    "badge": "Registro de Trayectoria"
-  },
   "videos": {
     "video1": {
       "title": "Detrás del trazo",
@@ -604,10 +595,6 @@
     "behind": {
       "title": "Detrás de Escena | ZERRAINK Studio",
       "description": "Descubre el proceso creativo y el detrás de escena de ZERRAINK Studio en Ribeirão Preto."
-    },
-    "festivals": {
-      "title": "Festivales y Reconocimiento | ZERRAINK Studio",
-      "description": "Consulta mi trayectoria en convenciones de tatuaje y festivales por todo Brasil."
     },
     "privacy": {
       "title": "Pol?tica de Privacidad | ZERRAINK Estudio",

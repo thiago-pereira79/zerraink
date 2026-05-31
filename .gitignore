@@ -45,8 +45,6 @@ logs/
 .netlify/
 
 # Arquivos temporários gerados pelo Codex / Chrome / testes
-.codex-*/
+.codex-*
 .codex*/
-.codex-screens/
-.codex-chrome-*/
-.codex-chrome-scrollcheck/
+.codex*.log

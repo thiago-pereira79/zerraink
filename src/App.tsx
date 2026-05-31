@@ -7,7 +7,6 @@ const About = lazy(() => import('./pages/About'));
 const Styles = lazy(() => import('./pages/Styles'));
 const Gallery = lazy(() => import('./pages/Gallery'));
 const BehindTheScenes = lazy(() => import('./pages/BehindTheScenes'));
-const Festivais = lazy(() => import('./pages/Festivais'));
 const Contact = lazy(() => import('./pages/Contact'));
 const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
 const TermsOfUse = lazy(() => import('./pages/TermsOfUse'));
@@ -54,7 +53,6 @@ export default function App() {
               <Route path="/estilos" element={<Styles />} />
               <Route path="/galeria" element={<Gallery />} />
               <Route path="/bastidores" element={<BehindTheScenes />} />
-              <Route path="/festivais" element={<Festivais />} />
               <Route path="/contato" element={<Contact />} />
               <Route path="/orcamento" element={<Contact />} />
               <Route path="/privacidade" element={<PrivacyPolicy />} />
