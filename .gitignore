@@ -33,3 +33,4 @@ logs/
 
 .vercel/
 .netlify/
+.codex-chrome-scrollcheck/
