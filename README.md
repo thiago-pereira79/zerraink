@@ -12,11 +12,11 @@
 
 ## 🖤 Sobre o projeto
 
-O **ZERRAINK STUDIO** é um site desenvolvido para apresentar o trabalho do tatuador **Lucas Zerra**, destacando sua trajetória, estilos de tatuagem, galeria de trabalhos, depoimentos reais e canais de contato.
+O **ZERRAINK STUDIO** é um site institucional desenvolvido para apresentar o trabalho do tatuador **Lucas Zerra**, reunindo sua trajetória, estilos de tatuagem, galeria de projetos, depoimentos reais e canais de contato em uma experiência digital clara, elegante e responsiva.
 
-A proposta do projeto é unir **identidade visual premium**, **experiência de navegação clara** e **presença digital profissional**, criando um ambiente elegante, direto e funcional para quem deseja conhecer o estúdio, explorar estilos e iniciar uma conversa sobre um novo projeto de tatuagem.
+A proposta do projeto foi construir uma presença online com identidade visual forte, navegação objetiva e atmosfera premium, criando um ambiente que transmite confiança, personalidade artística e cuidado em cada detalhe.
 
-O site foi pensado para transmitir confiança, personalidade e cuidado em cada detalhe, da primeira dobra da página até o contato final.
+O site foi pensado para funcionar como uma vitrine profissional do estúdio, facilitando a descoberta do trabalho, a exploração dos estilos disponíveis e o contato direto com o tatuador.
 
 ---
 
@@ -28,16 +28,19 @@ O site foi pensado para transmitir confiança, personalidade e cuidado em cada d
 
 ## 🎯 Objetivo
 
-O objetivo do site é oferecer uma experiência digital completa para o visitante, reunindo em um único lugar:
+O objetivo do ZERRAINK STUDIO é oferecer uma experiência digital completa para visitantes interessados em conhecer o estúdio, explorar referências visuais e iniciar uma conversa sobre um novo projeto de tatuagem.
+
+O site reúne em um único ambiente:
 
 - Apresentação do tatuador e sua trajetória;
-- Explicação sobre estilos de tatuagem;
-- Galeria de trabalhos;
+- Explicação dos principais estilos de tatuagem;
+- Galeria organizada por categorias;
 - Depoimentos de clientes;
 - Informações de contato;
 - Links para WhatsApp, e-mail e redes sociais;
-- Navegação multilíngue em português, inglês e espanhol;
-- Rotas amigáveis para cada página do site.
+- Navegação em português, inglês e espanhol;
+- Rotas amigáveis para navegação e compartilhamento;
+- Experiência responsiva para desktop, notebook, tablet, iPad e mobile.
 
 ---
 
@@ -45,25 +48,26 @@ O objetivo do site é oferecer uma experiência digital completa para o visitant
 
 - Página inicial com identidade visual autoral;
 - Página “Sobre” com história e trajetória do tatuador;
-- Página de estilos com detalhes sobre cada estilo de tatuagem;
-- Galeria com filtros por categoria;
+- Página de estilos com descrição das especialidades;
+- Galeria com categorias de tatuagem;
+- Visualização ampliada das imagens da galeria;
 - Página de depoimentos;
-- Página de contato com WhatsApp, e-mail, endereço e atendimento;
+- Página de contato com WhatsApp, e-mail, endereço e informações de atendimento;
 - FAQ;
 - Política de Privacidade;
 - Termos de Uso;
 - Internacionalização com suporte a PT, EN e ES;
-- Menu responsivo para desktop, tablet, iPad e mobile;
+- Menu responsivo;
 - Links externos para redes sociais;
 - Integração com WhatsApp e e-mail;
-- Layout responsivo;
-- Deploy em produção.
+- Layout adaptado para diferentes tamanhos de tela;
+- Deploy em produção na Vercel.
 
 ---
 
 ## 🧩 Páginas e rotas
 
-O projeto utiliza rotas amigáveis para facilitar navegação, compartilhamento e SEO.
+O projeto utiliza rotas amigáveis para facilitar a navegação, o compartilhamento e a organização do conteúdo.
 
 | Página | Rota |
 |---|---|
@@ -87,9 +91,9 @@ O site possui suporte a múltiplos idiomas:
 - Inglês;
 - Espanhol.
 
-A estrutura de idiomas permite que o conteúdo do site seja traduzido sem alterar as rotas principais.
+A estrutura de internacionalização permite que o conteúdo textual seja traduzido sem alterar as rotas principais do projeto.
 
-As URLs permanecem fixas, enquanto o conteúdo textual muda conforme o idioma selecionado.
+As URLs permanecem fixas, enquanto os textos da interface mudam conforme o idioma selecionado.
 
 Exemplo:
 
@@ -115,11 +119,13 @@ ES: Galería → /galeria
 ### Interface e experiência
 
 - Layout responsivo;
-- Design minimalista e premium;
+- Design responsivo;
 - Componentização;
-- Microinterações;
-- Tipografia editorial;
-- Paleta visual com preto, branco/off-white e azul petróleo.
+- Identidade visual premium;
+- Tipografia com estética editorial;
+- Paleta visual baseada em preto, branco/off-white e azul petróleo;
+- Microinterações e estados visuais;
+- Estrutura pensada para clareza, contraste e navegação fluida.
 
 ### Deploy
 
@@ -156,35 +162,58 @@ ES: Galería → /galeria
 
 ## 🔐 Segurança e boas práticas
 
-O projeto considera boas práticas básicas de desenvolvimento web, como:
+O projeto foi estruturado considerando boas práticas de desenvolvimento front-end, organização visual e manutenção do código.
+
+Entre os principais cuidados aplicados estão:
 
 - Separação de componentes;
-- Organização de páginas;
-- Textos centralizados em arquivos de tradução;
-- Estrutura preparada para SEO;
-- Responsividade;
+- Organização de páginas por rotas;
+- Conteúdo textual centralizado em arquivos de tradução;
+- Estrutura preparada para deploy como SPA;
+- Responsividade para múltiplos dispositivos;
 - Links externos preservados;
 - Rotas amigáveis;
-- Compatibilidade com deploy em SPA.
+- Consistência visual entre páginas;
+- Atenção à legibilidade, contraste e hierarquia da interface.
 
 ---
 
 ## 🎨 Identidade visual
 
-O visual do ZERRAINK STUDIO foi pensado para transmitir:
+O visual do ZERRAINK STUDIO foi pensada para transmitir:
 
 - Sofisticação;
 - Autoridade artística;
 - Clareza;
 - Confiança;
 - Presença visual;
+- Exclusividade;
 - Experiência premium.
 
 A paleta principal utiliza:
 
 - Preto;
 - Branco/off-white;
-- Azul petróleo.
+- Azul petróleo;
+- Detalhes visuais em tons escuros e contrastes sutis.
+
+A interface busca equilibrar impacto visual e leitura confortável, mantendo o conteúdo como protagonista sem perder a personalidade do estúdio.
+
+---
+
+## 📱 Responsividade
+
+O site foi desenvolvido para se adaptar a diferentes dispositivos e tamanhos de tela, incluindo:
+
+- Desktop;
+- Notebook;
+- Tablet;
+- iPad;
+- Mobile;
+- Orientação vertical;
+- Orientação horizontal.
+
+A responsividade foi tratada para preservar a navegação, a leitura, os elementos visuais e a experiência geral do usuário em diferentes contextos de uso.
 
 ---
 
@@ -192,10 +221,12 @@ A paleta principal utiliza:
 
 Projeto em produção.
 
-Melhorias, ajustes visuais, refinamentos responsivos e otimizações podem continuar sendo aplicados conforme evolução do site.
+O site já está publicado e pode continuar recebendo melhorias, ajustes visuais, refinamentos responsivos, otimizações de performance e evoluções de conteúdo conforme a necessidade do estúdio.
 
 ---
 
 ## 👤 Autor
 
 Desenvolvido por Thiago Pereira.
+
+Projeto criado com foco em desenvolvimento front-end, UX/UI, responsividade e experiência digital para presença profissional na web.
